@@ -1,94 +1,78 @@
-# SQLのきほん — 図で学ぶSQL Server入門・全15章
+# SQLのきほん
 
-HTML・CSS・JavaScriptだけで動く、SQLの書き方を初めて学ぶ人のための教材です。第1章の表を触る体験から、SELECT・条件・集計・JOIN・論理的な処理順序・総合演習まで学べます。
+**図を見て、SQLを書いて、結果を確かめる。**
 
-[教材をブラウザーで開く](https://tsurumakishunta.github.io/sql-no-kihon/) · [公開状況を確認する](https://github.com/tsurumakishunta/sql-no-kihon/actions/workflows/pages.yml)
+SQL Serverで使うSQLの書き方を、基礎から少しずつ学べる初心者向け教材です。表の「行」と「列」を知るところから始めて、条件で絞る、並べ替える、集計する、複数の表をつなぐところまで、全15章で学びます。
 
-**English:** A visual, beginner-friendly SQL Server tutorial built with HTML, CSS, and JavaScript. Explore 15 chapters with interactive tables, diagrams, quizzes, and a browser-based SQL simulator. No installation or database server is required. The lessons are written in Japanese.
+ひよこの「カルメロ」と、お姉さん役の「コルナリーナ」が、図や身近なデータを使って学習を案内します。
 
-リポジトリ名：`sql-no-kihon`（SQLのきほん / SQL First Steps）
+![SQLのきほんのメインイラスト](dist/assets/start-scene.png)
 
-- **日本語の説明：** 図とキャラクターで学ぶ、SQL Server向けの超入門教材。HTML・CSS・JavaScriptだけで動作。
-- **English description:** A visual, beginner-friendly SQL Server tutorial built with HTML, CSS, and JavaScript.
+## こんな方へ
 
-## 開き方
+- SQLやデータベースに初めて触れる方
+- SQLを見ても、どのような結果になるのかイメージしにくい方
+- 説明を読みながら、実際にSQLを書いて覚えたい方
+- SELECTの基本を、自分のペースで練習したい方
 
-`dist/index.html` をブラウザーで開くと、インターネット接続・インストールなしで学習できます。キャラクター画像の `assets` を含む `dist` フォルダー全体を一緒に配布します。外部フォント・CDN・ライブラリに依存しません。
+## この教材の特徴
 
-ローカルプレビューを使う場合は、プロジェクトで `node preview.cjs` を実行し、表示されたローカルURLを開きます。
+- **表の変化を図で確かめる** — 選んだ列や条件に合う行、集計のまとまり、表同士のつながりを見ながら学べます。
+- **SQLを変えて試す** — 商品・注文・お客さまのサンプルデータを使い、SQLを書き換えて実行すると結果が変わります。
+- **何度でもやり直せる** — 「初期値に戻す」でSQLと実行結果をリセットできるので、気軽に試せます。
+- **クイズと演習で振り返る** — 全46レッスンと45問の復習クイズを収録。最後は3つの総合演習で、目的に合うSQLを組み立てます。
+- **続きから学べる** — 学習の進み具合とSQLの下書きをブラウザーに保存し、「つづきから」で再開できます。
 
-## GitHub Pagesへの自動公開
+## 学べる内容
 
-`main` に変更をpushすると、[GitHub Actions](https://github.com/tsurumakishunta/sql-no-kihon/actions/workflows/pages.yml)がJavaScriptの構文とSQLエンジン・教材例を確認し、成功したときだけ `dist` をGitHub Pagesへ公開します。手動で再公開する場合は、同じActions画面の「Run workflow」を使います。
+| 章 | テーマ | 学ぶこと |
+| --- | --- | --- |
+| 1 | データベースって何？ | テーブル・行・列を知り、表から情報を取り出す感覚をつかむ |
+| 2 | はじめてのSQLを書こう | `SELECT`・`FROM`で、見たい列を選ぶ |
+| 3 | 条件に合う行を探そう | `WHERE`で、必要な行を絞り込む |
+| 4 | 条件を組み合わせよう | `AND`・`OR`・括弧で、複数の条件を表す |
+| 5 | いろいろな探し方を覚えよう | `IN`・`BETWEEN`・`LIKE`で、候補・範囲・文字のパターンを指定する |
+| 6 | 並べ替えと上位表示をしよう | `ORDER BY`・`TOP`で、表示する順番と件数を決める |
+| 7 | 取り出す結果を整えよう | `AS`・計算・`DISTINCT`で、別名を付けたり重複を除いたりする |
+| 8 | 値が入っていないときは？ | `NULL`の意味と、値が入っていない行の探し方を知る |
+| 9 | 件数や合計を求めよう | `COUNT`・`SUM`・`AVG`・`MIN`・`MAX`で、データを集計する |
+| 10 | 種類ごとに集計しよう | `GROUP BY`で、グループごとに件数や合計を求める |
+| 11 | 集計した結果を絞ろう | `HAVING`で、集計後のグループに条件を付ける |
+| 12 | 2つの表をつなごう | `INNER JOIN`で、対応するデータを組み合わせる |
+| 13 | 相手がいない行も残そう | `LEFT JOIN`で、対応するデータがない行も取り出す |
+| 14 | SQLを書く順番と、結果ができる順番 | SQLの論理的な処理順序を、途中の表を見ながら理解する |
+| 15 | 自分でSQLを組み立てよう | 3つの総合演習で、条件・集計・結合を組み合わせる |
 
-公開設定は「Settings → Pages → Build and deployment → Source: GitHub Actions」です。追加のAPIキーやnpmパッケージのインストールは不要です。教材の編集対象は `dist` 内にあります。画像を含めた相対パスとハッシュ形式の画面移動を使用しているため、GitHub Pagesのリポジトリ配下でも動作します。
+## 学び方
 
-**English:** Push changes to `main` to validate and deploy the static `dist` directory with GitHub Actions. Deployment runs only after the checks pass. The workflow can also be started manually. No additional deployment secrets or build dependencies are required.
+1. タイトル画面の「はじめる」から、学びたい章を選びます。初めての方は第1章から進めると、順番に理解を深められます。
+2. キャラクターの説明を読み、表やSQLの考え方をつかみます。
+3. SQLを書いたら「実行」を押し、その下に表示される結果を見ます。列名や条件を変え、結果を予想してから実行してみましょう。
+4. 結果の下にある図や補足で、なぜその結果になったのかを振り返ります。迷ったときは「初期値に戻す」で例からやり直せます。
+5. 章の終わりのクイズで理解を確認し、最後の総合演習に挑戦します。
 
-## 章の構成
+## 学習を案内するキャラクター
 
-1. データベースって何？
-2. はじめてのSQLを書こう（SELECT・FROM）
-3. 条件に合う行を探そう（WHERE）
-4. 条件を組み合わせよう（AND・OR・括弧）
-5. いろいろな探し方を覚えよう（IN・BETWEEN・LIKE）
-6. 並べ替えと上位表示をしよう（ORDER BY・TOP）
-7. 取り出す結果を整えよう（AS・計算・DISTINCT）
-8. 値が入っていないときは？（NULL）
-9. 件数や合計を求めよう（COUNT・SUM・AVG・MIN・MAX）
-10. 種類ごとに集計しよう（GROUP BY）
-11. 集計した結果を絞ろう（HAVING）
-12. 2つの表をつなごう（INNER JOIN）
-13. 相手がいない行も残そう（LEFT JOIN）
-14. SQLを書く順番と、結果ができる順番
-15. 自分でSQLを組み立てよう（3つの総合演習）
+**カルメロ**
 
-46レッスンと45問の復習クイズを収録。SQLを編集すると結果が変わり、処理のボタンを選ぶと途中の表を見られます。集計はグループの箱、JOINは商品IDの対応で図示します。第15章は結果の列名・列順・値・行数・指定された並び順を比較して採点します。意味の等しいSQLすべての厳密な証明をする採点器ではありません。
+白いはちまきを巻いた、やさしくておとなしいひよこ。この教材のメインの案内役です。初めて出会う言葉やSQLの考え方を、一歩ずつ説明してくれます。
 
-## 画面と案内役
+**コルナリーナ**
 
-- 起動時はゲームのスタート画面を表示します。コルナリーナがカルメロを抱っこした全身の一枚絵に、タイトルと「はじめる」「つづきから」を配置しています。PCでは左に開始メニュー、スマートフォンではタイトル→全身イラスト→開始メニューの順です。キャラクターの名前ラベルは表示しません。「はじめる」は章一覧へ、「つづきから」は保存済みの学習位置へ進みます。
-- 章一覧はPCの十分な表示領域（幅1100px以上・高さ720px以上）では3列×5段で全15章を表示します。小さな画面では3〜6章ずつ「前へ・次へ」で切り替えます。章名と学ぶSQLを一緒に表示します。
-- 左上の「SQLのきほん」からタイトルメニューへ、レッスン内の「章一覧」から章の選択へ戻ります。レッスンの目次は開閉でき、開閉状態も保存します。
-- 学習内容は1列で上から下に並びます。第1章のSQL体験を含む43画面で、SQL入力 → 実行・初期値に戻す → 実行結果 → 補足の順に表示します。
-- 初期表示とリセット後は実行待ちです。「初期値に戻す」はそのレッスンのSQLと結果を初期化し、学習済みの記録を保持します。
-- 実行結果と途中経過の表は別の領域です。処理の段階を選んでも、上に表示した最終結果は変わりません。
-- 白いはちまきのひよこ「カルメロ」が説明を担当し、おっとりした先生「コルナリーナ」がポイントをまとめます。タイトルと章一覧の最後に開閉できる紹介を置き、ブランドアイコンとfaviconにもカルメロを使います。コルナリーナの紹介は性格と役割に絞っています。
+おっとりした、お姉さんのような案内役。覚えておきたいポイントや、つまずきやすいところで登場し、理解をそっと手伝ってくれます。
 
-キャラクター画像はこの教材用に生成したオリジナルイラストです。公開ファイルには教材で使用する画像のみを含めています。
+## 利用について
 
-## 動作範囲
+HTML・CSS・JavaScriptで動作し、SQL Serverのインストールは不要です。保存した`dist`フォルダー内の`index.html`をブラウザーで開くと学習を始められます。画像なども使うため、`dist`フォルダーは中身をまとめて保存します。
 
-- SQL Server本体への接続はありません。読み取り専用の教育用T-SQLサブセットをJavaScriptで解析・評価します。`eval`や外部サービスは使いません。
-- 上記のSELECT構文、表と列の別名、N'文字列'、角括弧の識別子、行・ブロックコメントに対応します。商品・注文・お客さまの固定データを使用し、第8章から商品にメモ列を加えます。
-- NULLの3値論理、COUNT(*)とCOUNT(列)、整数AVG、WHERE→GROUP BY→HAVING、LEFT JOINの未一致、DISTINCT→ORDER BY→TOPを再現します。
-- 全T-SQL互換ではありません。複数文、サブクエリ、CTE、CASE、ウィンドウ関数、日付関数、型変換、追加・更新・削除、運用管理は対象外です。
-- 照合順序を再現しません。文字比較は大小文字を区別し、通常の比較では末尾の半角空白を無視します。文字列の並び順やLIKEの細部はSQL Server環境により異なります。LIKEは%と_に対応し、角括弧パターンは対象外です。
-- 数値は小さなintと小数の学習例を対象にします。小数演算は14有効桁で計算誤差を整えます。SQL Serverのdecimalの精度・スケール・型伝播を完全には再現しません。int演算・集計の範囲超過と0除算はエラーにします。
-- 進捗とSQLの下書きはlocalStorageに保存します。保存できない環境でも画面操作は動きますが、再読み込み後には残せません。保存先はブラウザーとURLのオリジンごとに異なります。
-- キーボード操作、Ctrl/⌘+Enterでの実行、狭い画面、動きを減らす設定に対応しています。
-- WebMCP対応ブラウザーには `read_sql_course` / `navigate_sql_course` / `run_training_select` を公開します。未対応ブラウザーでは通常のUIで動作します。
+教材内のSQLは、サンプルデータを使う学習用シミュレーターで動作します。学習の中心は、`SELECT`によるデータの取り出し方です。SQL Serverのすべての構文や動作を再現するものではなく、データの追加・更新・削除や、サーバーの設定・運用は扱いません。
 
-## ファイル
+学習の記録は、利用しているブラウザー内に保存されます。別のブラウザーや端末には引き継がれず、ブラウザーの保存データを削除すると記録も消えます。
 
-- `dist/index.html`：画面の枠組み
-- `dist/styles.css`：方眼紙をイメージしたデザインとレスポンシブ表示
-- `dist/course.css`：全章ナビゲーションとSQL練習画面のデザイン
-- `dist/learning.css`：メインメニュー、縦並びのレイアウト、開閉する目次とキャラクター表示
-- `dist/start-screen.css`：ゲーム風のスタート画面と全身イラストの表示
-- `dist/characters.js`：キャラクターの説明パネル
-- `dist/assets/`：カルメロ・コルナリーナの基本カットとトップ専用PNG
-- `dist/chapter-one.js`：第1章の図と操作
-- `dist/course-data.js`：第2〜15章の原稿、SQL例、クイズと演習
-- `dist/sql-engine.js`：教材用のSQLパーサーと評価器
-- `dist/course-app.js`：章移動、編集、図、クイズ、採点、進捗保存
-- `preview.cjs`：ローカル確認用サーバー（教材自体には不要）
+## English
 
-## 検証
+**SQL First Steps** is a visual, beginner-friendly introduction to writing SQL for SQL Server. Across 15 chapters, learners explore tables, SELECT queries, filtering, sorting, aggregation, joins, and logical query processing through diagrams and hands-on practice.
 
-`node --test tests/sql-engine.test.cjs`
+The course includes 46 lessons, 45 review questions, and three final exercises. Carmelo, a gentle chick, guides learners through the basics, while Cornalina offers helpful tips. Lessons are written in Japanese.
 
-NULL、集計、結合、別名、TOP、数値、無効な構文、元データ保持と、全126個の原稿内SQL例を検証します。実際のSQL Serverとの自動比較テストではありません。
-
-教材の例はSQL ServerのSELECT構文を前提にしています。
-参考：[Microsoft Learn — SELECT (Transact-SQL)](https://learn.microsoft.com/ja-jp/sql/t-sql/queries/select-transact-sql)
+Built with HTML, CSS, and JavaScript, the course runs in a browser without installing SQL Server. Its educational simulator supports the read-only SQL features used in the lessons; it does not reproduce every SQL Server feature. Learning progress and SQL drafts are saved in the current browser.
