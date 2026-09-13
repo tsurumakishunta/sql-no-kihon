@@ -1,0 +1,25 @@
+# Only these project files and directories are intended for publication.
+/*
+!/.gitignore
+!/README.md
+!/preview.cjs
+!/dist/
+!/tests/
+!/.github/
+
+# Local settings, credentials, generated work, and retired illustrations.
+.openai/
+.codex/
+.qa/
+.sites-runtime/
+.env
+.env.*
+*.pem
+*.key
+*.bundle
+*.tar
+*.tar.gz
+node_modules/
+CHARACTERS.md
+dist/assets/carmelo-title.png
+dist/assets/cornalina-title.png

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="見て、さわって、SQLを書いて学ぶ全15章。SELECTから条件・集計・JOIN・論理処理順序まで、SQL Serverの基本をブラウザーだけで学べます。">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>SQLのきほん｜図で学ぶSQL Server入門 全15章</title>
+  <link rel="icon" type="image/png" href="assets/carmelo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="course.css">
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="start-screen.css">
+  <script src="characters.js" defer></script>
+  <script src="sql-engine.js" defer></script>
+  <script src="course-data.js" defer></script>
+  <script src="chapter-one.js" defer></script>
+  <script src="course-app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-menu" id="skip-main">本文へ移動</a>
+  <header class="site-header">
+    <a class="brand" href="#home" data-home aria-label="SQLのきほん タイトルメニューへ"><img class="brand-character" src="assets/carmelo.png" alt="" width="52" height="52">SQLのきほん</a>
+    <span class="edition">SQL Server 入門</span>
+  </header>
+  <main id="main-menu" class="main-menu" tabindex="-1"></main>
+  <div class="app-shell" id="app-shell" hidden>
+    <aside class="sidebar" id="lesson-sidebar" aria-label="この章の目次">
+      <div class="sidebar-top"><span>この章の目次</span><button type="button" data-toggle-sidebar class="sidebar-close" aria-label="目次を閉じる">×</button></div>
+      <p id="chapter-eyebrow" class="eyebrow">CHAPTER 01 / 15</p>
+      <h2 id="chapter-title">データベースって何？</h2>
+      <p id="chapter-intro" class="sidebar-intro">まずは、小さなお店のデータをのぞいてみよう。</p>
+      <nav id="lesson-nav" aria-label="レッスン"></nav>
+      <div class="chapter-progress"><span id="progress-text">0 / 5 レッスン</span><div class="progress-track" role="progressbar" aria-label="章の進み具合" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><span id="progress-fill"></span></div></div>
+      <div class="sidebar-footer"><div><p id="course-progress">0 / 15 章クリア</p><p id="save-status">進み具合はこのブラウザーに保存</p><button type="button" id="open-reference" class="text-button">SQLの早見表</button><a class="sidebar-home" href="#chapters" data-open-course>章一覧に戻る</a></div></div>
+    </aside>
+    <main id="lesson" tabindex="-1">
+      <div class="lesson-toolbar"><button type="button" id="toggle-sidebar" data-toggle-sidebar aria-controls="lesson-sidebar" aria-expanded="true">目次を閉じる</button><a href="#chapters" data-open-course>章一覧</a></div>
+      <div class="lesson-topline"><span id="step-label" class="eyebrow">LESSON 01 / 05</span><span class="chapter-label">第1章 · データのきほん</span></div>
+      <div id="lesson-content"></div>
+      <footer class="lesson-footer"><button id="previous" class="button button-quiet" type="button">← 前へ</button><span id="footer-note">自分のペースで進めよう</span><button id="next" class="button button-primary" type="button">次へ：テーブル <span aria-hidden="true">→</span></button></footer>
+    </main>
+  </div>
+  <dialog id="reference-dialog" aria-labelledby="reference-title"><div class="dialog-heading"><div><p class="eyebrow">QUICK REFERENCE</p><h2 id="reference-title">SQLの早見表</h2></div><button type="button" class="dialog-close" data-close-dialog="reference-dialog" aria-label="早見表を閉じる">×</button></div><div id="reference-content"></div></dialog>
+  <noscript><p class="noscript">この教材の操作にはJavaScriptを使います。ブラウザーのJavaScriptを有効にすると、表を操作して学べます。</p></noscript>
+</body>
+</html>
