@@ -1,5 +1,9 @@
 # SQLのきほん
 
+[日本語](README.md) | [English](README.en.md)
+
+**公開URL：[https://tsurumakishunta.github.io/sql-no-kihon/](https://tsurumakishunta.github.io/sql-no-kihon/)**
+
 **図を見て、SQLを書いて、結果を確かめる。**
 
 SQL Serverで使うSQLの書き方を、基礎から少しずつ学べる初心者向け教材です。表の「行」と「列」を知るところから始めて、条件で絞る、並べ替える、集計する、複数の表をつなぐところまで、全15章で学びます。
@@ -301,13 +305,3 @@ sequenceDiagram
 | 互換性 | 基本構文と一部の型・`NULL`の動作を再現 | SQL Serverの型・照合順序・権限などに従う |
 
 この教材のエンジンには、実行プランの最適化、索引、トランザクション、サンプルデータの永続的な更新はありません。文字列の比較や数値の精度なども完全互換ではありません。基本的なSQLの意味を、入力と結果と図で確かめるための構成です。SQL Server側の処理の説明は[Microsoft Learnのクエリ処理アーキテクチャ](https://learn.microsoft.com/ja-jp/sql/relational-databases/query-processing-architecture-guide)を参照しています。
-
-## English
-
-**SQL First Steps** is a visual, beginner-friendly introduction to writing SQL for SQL Server. Across 15 chapters, learners explore tables, SELECT queries, filtering, sorting, aggregation, joins, and logical query processing through diagrams and hands-on practice.
-
-The course includes 46 lessons, 45 review questions, and three final exercises. Carmelo, a gentle chick, guides learners through the basics, while Cornalina offers helpful tips. Lessons are written in Japanese.
-
-Built with HTML, CSS, and JavaScript, the course runs in a browser without installing SQL Server. Its educational simulator supports the read-only SQL features used in the lessons; it does not reproduce every SQL Server feature. Learning progress and SQL drafts are saved in the current browser.
-
-A custom JavaScript interpreter tokenizes and parses the SQL, evaluates it against copies of the sample tables, and records intermediate stages for the diagrams. The technical sections above explain the query pipeline, application components, table relationships, result rendering, exercise grading, and browser storage with five diagrams. SQL execution does not require a database connection or an external API.
